@@ -1,0 +1,14 @@
+{
+	"name": "easy/pushnotify",
+	"description": "push notifications test",
+	"type": "project",
+	"autoload": {
+		"psr-4": {
+			"App\\": "api/vendor/"
+		}
+	},
+	"require": {
+		"minishlink/web-push": "^7.0"
+	},
+	"minimum-stability": "dev"
+}
