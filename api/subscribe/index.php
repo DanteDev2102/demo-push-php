@@ -1,6 +1,7 @@
 <?php
 
-    require_once "../lib/webPush.php";
+    require "../lib/webPush.php";
+
     header('Access-Control-Allow-Origin: *');
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
@@ -14,9 +15,10 @@
 
         $webpush = new _WebPush();
         $webpush->sendNotification($subscriber,$message);
+        http_response_code(201);
         echo json_encode($webpush);
     }catch(error $e){
-        echo "hay un error :C <br>";
+        http_response_code(500);
         echo $e;
     }
 
